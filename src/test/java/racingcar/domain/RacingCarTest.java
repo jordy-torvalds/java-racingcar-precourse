@@ -6,11 +6,10 @@ import racingcar.util.RacingCarException;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-@DisplayName("경주_자동차_생성")
+@DisplayName("경주_자동차")
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class RacingCarTest {
 
-    @Order(1)
     @Test
     @DisplayName("자동차_생성_정상")
     void 자동차_생성_정상() {
@@ -21,8 +20,8 @@ class RacingCarTest {
         assertDoesNotThrow(()->new RacingCar(racingCarName));
     }
 
-    @Order(2)
     @Test
+    @DisplayName("자동차_생성_예외/1글자_미만_이름")
     void 자동차_생성_예외_1글자_미만_이름() {
         // Given
         String racingCarName = "";
@@ -32,8 +31,8 @@ class RacingCarTest {
                 () -> new RacingCar(racingCarName));
     }
 
-    @Order(3)
     @Test
+    @DisplayName("자동차_생성_예외/6글자_이상_이름")
     void 자동차_생성_예외_6글자_이상_이름() {
         // Given
         String racingCarName = "죠르디_토르발즈";
