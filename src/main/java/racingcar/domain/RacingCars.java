@@ -11,7 +11,7 @@ public class RacingCars {
     public RacingCars(String racingCarsName) {
         validateRacingCarsConstructor(racingCarsName);
         createRacingCar(racingCarsName);
-        GameMetaData.Position.setDefaultUsableCount(racingCarList.size());
+        GameMetaData.Position.setDefaultUsableCount(this.getRacingCarListSize());
     }
 
     private void processRacingCarUsingFunction(Runnable runnable) {
