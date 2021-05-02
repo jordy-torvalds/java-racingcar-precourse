@@ -7,6 +7,7 @@ import static racingcar.domain.RacingCars.MIN_PLAYING_RACING_CARS_SIZE;
 
 public class RacingCarsException extends RuntimeException {
     private RacingCarsException(String message) {
+        super(message);
     }
 
     public static class IllegalRacingCarsNameLengthException extends RacingCarsException {
