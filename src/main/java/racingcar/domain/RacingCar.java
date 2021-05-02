@@ -1,6 +1,10 @@
 package racingcar.domain;
 
+import racingcar.util.ForwardStopPullUtil;
 import racingcar.util.RacingCarException;
+import racingcar.util.enums.ForwardStopStatus;
+
+import static racingcar.util.enums.ForwardStopStatus.FORWARD;
 
 public class RacingCar {
     public static final int MIN_NAME_LENGTH = 1;
@@ -16,8 +20,19 @@ public class RacingCar {
         this.position = new Position();
     }
 
+    public void applyForwardStop(ForwardStopStatus forwardStopStatus) {
+        if (forwardStopStatus.equals(FORWARD)) {
+            this.position.plusPosition();
+        }
+    }
+
+    public Position getPosition() {
+        return this.position;
+    }
+
     private void validateRacingCarNameBoundary(String racingCarName) {
-        if(racingCarName.length() < MIN_NAME_LENGTH || MAX_NAME_LENGTH < racingCarName.length()) {
+        if(racingCarName.length() < MIN_NAME_LENGTH
+                || MAX_NAME_LENGTH < racingCarName.length()) {
             throw new RacingCarException.IllegalRacingCarNameBoundaryException(racingCarName);
         }
     }

@@ -1,9 +1,17 @@
 package racingcar.domain;
 
 public class Position {
-    private int position;
+    private int value;
+
+    public Position () {
+        value = 0;
+    }
 
     public void plusPosition() {
-        this.position += 1;
+        this.value += 1;
+    }
+
+    public int getValue() {
+        return value;
     }
 }
