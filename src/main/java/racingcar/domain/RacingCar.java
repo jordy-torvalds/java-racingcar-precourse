@@ -1,14 +1,13 @@
 package racingcar.domain;
 
-import racingcar.util.ForwardStopPullUtil;
 import racingcar.util.RacingCarException;
 import racingcar.util.enums.ForwardStopStatus;
 
+import static racingcar.domain.GameMetaData.RacingCar.MAX_NAME_LENGTH;
+import static racingcar.domain.GameMetaData.RacingCar.MIN_NAME_LENGTH;
 import static racingcar.util.enums.ForwardStopStatus.FORWARD;
 
 public class RacingCar {
-    public static final int MIN_NAME_LENGTH = 1;
-    public static final int MAX_NAME_LENGTH = 5;
 
     private String name;
     private Position position;
@@ -17,12 +16,12 @@ public class RacingCar {
         validateRacingCarNameBoundary(racingCarName);
 
         this.name = racingCarName;
-        this.position = new Position();
+        this.position = Position.of();
     }
 
     public void applyForwardStop(ForwardStopStatus forwardStopStatus) {
         if (forwardStopStatus.equals(FORWARD)) {
-            this.position.plusPosition();
+            this.position = position.plusPosition();
         }
     }
 

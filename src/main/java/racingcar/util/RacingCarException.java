@@ -1,9 +1,9 @@
 package racingcar.util;
 
 import static java.lang.String.format;
-import static racingcar.domain.RacingCar.MAX_NAME_LENGTH;
-import static racingcar.domain.RacingCar.MIN_NAME_LENGTH;
-import static racingcar.domain.RacingCars.MIN_PLAYING_RACING_CARS_SIZE;
+import static java.util.prefs.Preferences.MAX_NAME_LENGTH;
+import static racingcar.domain.GameMetaData.RacingCar.MIN_NAME_LENGTH;
+import static racingcar.domain.GameMetaData.RacingCars.MIN_PLAYING_RACING_CARS_SIZE;
 
 public class RacingCarException extends RuntimeException {
     private RacingCarException(String message) {

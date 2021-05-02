@@ -6,14 +6,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RacingCars {
-    public static final int MIN_PLAYING_RACING_CARS_SIZE = 2;
-    public static final int MAX_PLAYING_RACING_CARS_SIZE = Integer.MAX_VALUE;
-
     private List<RacingCar> racingCarList = new ArrayList<>();
 
     public RacingCars(String racingCarsName) {
         validateRacingCarsConstructor(racingCarsName);
         createRacingCar(racingCarsName);
+        GameMetaData.Position.setDefaultUsableCount(racingCarList.size());
+    }
+
+    private void processRacingCarUsingFunction(Runnable runnable) {
+        runnable.run();
+    }
+
+    private int getRacingCarListSize() {
+        return racingCarList.size();
     }
 
     private void validateRacingCarsConstructor(String racingCarsName) {
@@ -46,6 +52,7 @@ public class RacingCars {
 
     private void createRacingCar(String racingCarsName) {
         String[] racingCarNameArray = racingCarsName.split(",");
+
         for (String racingCarName : racingCarNameArray) {
             RacingCar racingCar = new RacingCar(racingCarName);
             racingCarList.add(racingCar);
