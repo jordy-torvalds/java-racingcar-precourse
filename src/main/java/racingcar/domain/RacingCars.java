@@ -14,7 +14,6 @@ public class RacingCars {
     public RacingCars(String racingCarsName) {
         validateRacingCarsConstructor(racingCarsName);
         createRacingCar(racingCarsName);
-        String[] racingCarsNameArray = racingCarsName.split(",");
     }
 
     private void validateRacingCarsConstructor(String racingCarsName) {
