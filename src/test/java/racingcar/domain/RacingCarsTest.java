@@ -7,7 +7,7 @@ import racingcar.util.RacingCarsException;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-@DisplayName("경주_자동차들_생성")
+@DisplayName("경주_자동차들")
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class RacingCarsTest {
 
