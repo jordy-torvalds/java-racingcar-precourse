@@ -1,6 +1,8 @@
 package racingcar.domain;
 
+import racingcar.util.ForwardStopPullUtil;
 import racingcar.util.RacingCarsException;
+import racingcar.util.enums.ForwardStopStatus;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,8 +16,17 @@ public class RacingCars {
         GameMetaData.Position.setDefaultUsableCount(this.getRacingCarListSize());
     }
 
-    private void processRacingCarUsingFunction(Runnable runnable) {
-        runnable.run();
+    public void applyForwardStop() {
+        for(RacingCar racingCar : racingCarList) {
+            ForwardStopStatus forwardStopStatus = ForwardStopPullUtil.pullForwardStop();
+            racingCar.applyForwardStop(forwardStopStatus);
+        }
+    }
+
+    public void runRacingCarConsumer(RacingCarConsumer racingCarConsumer) {
+        for(RacingCar racingCar : racingCarList) {
+            racingCarConsumer.consume(racingCar);
+        }
     }
 
     private int getRacingCarListSize() {

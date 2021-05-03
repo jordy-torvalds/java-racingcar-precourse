@@ -17,11 +17,7 @@ public class GameMetaData {
         private static int DEFAULT_USABLE_COUNT = 0;
 
         public static void setDefaultUsableCount(int defaultUsableCount) {
-            if (DEFAULT_USABLE_COUNT == 0) {
-                DEFAULT_USABLE_COUNT = defaultUsableCount;
-            } else if (DEFAULT_USABLE_COUNT != 0) {
-                throw new IllegalArgumentException("최초 위치 도메인의 사용 가능 횟수 설정 이후에는 변경이 불가합니다.");
-            }
+            DEFAULT_USABLE_COUNT = defaultUsableCount;
         }
 
         public static int getDefaultUsableCount() {
