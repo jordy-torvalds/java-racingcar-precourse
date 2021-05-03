@@ -53,7 +53,7 @@ public class PositionPrintCache {
         String result = cache.getOrDefault(key - GameMetaData.Position.DEFAULT_INCREASE_VALUE, "");
 
         for (int i = 0; i < GameMetaData.Position.DEFAULT_INCREASE_VALUE; i++) {
-            result += "=";
+            result += "-";
         }
 
         return new String(result);
