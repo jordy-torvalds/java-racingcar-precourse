@@ -9,8 +9,6 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
 
-import static java.lang.String.format;
-
 public class RacingCarView {
 
     private final String MESSAGE_ANSWER_CAR_NAME = "경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)";
@@ -37,14 +35,9 @@ public class RacingCarView {
 
     void runTry(RacingCars racingCars) {
         racingCars.applyForwardStop();
+        String raceProgressString = ProgressBroadcast.createRaceProgressString(racingCars);
 
-        racingCars.runRacingCarConsumer((racingCar) -> {
-            Position position = racingCar.getPosition();
-            String positionPrint = PositionPrintCache.getPositionPrint(position.getValue());
-            System.out.println(format("%s:%s", racingCar.getName(), positionPrint));
-        });
-
-        System.out.println();
+        System.out.print(raceProgressString);
     }
 
     void clearPositionPrintCache() {

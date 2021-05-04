@@ -25,12 +25,6 @@ public class RacingCars {
         }
     }
 
-    public void runRacingCarConsumer(RacingCarConsumer racingCarConsumer) {
-        for (RacingCar racingCar : racingCarList) {
-            racingCarConsumer.consume(racingCar);
-        }
-    }
-
     public RacingCar getRacingCarBySpecificIndex(int index) {
         return racingCarList.get(index);
     }
