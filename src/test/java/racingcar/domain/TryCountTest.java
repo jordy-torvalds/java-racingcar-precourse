@@ -8,7 +8,7 @@ import racingcar.util.TryCountException;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-@DisplayName("재시도_횟수_입력_테스트")
+@DisplayName("재시도_횟수")
 class TryCountTest {
 
     @ParameterizedTest
