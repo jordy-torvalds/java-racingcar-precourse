@@ -1,6 +1,5 @@
 package racingcar.domain;
 
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -13,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @DisplayName("위치_출력_캐시")
 class PositionPrintCacheTest {
 
-    @AfterEach
+    @BeforeEach
     void 위치_출력_캐시_초기화() {
         PositionPrintCache.resetCache();
     }

@@ -11,7 +11,7 @@ import static racingcar.util.enums.ForwardStopStatus.STOP;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class RacingCarTest {
 
-    @AfterEach
+    @BeforeEach
     void resetCache() {
         PositionCache.resetCache();
     }
