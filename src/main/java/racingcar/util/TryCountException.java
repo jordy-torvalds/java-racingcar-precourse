@@ -24,5 +24,4 @@ public class TryCountException extends RuntimeException {
                     playerInput));
         }
     }
-
 }
