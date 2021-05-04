@@ -3,6 +3,10 @@ package racingcar.domain;
 import static java.lang.String.format;
 
 public class ProgressBroadcast {
+
+    private ProgressBroadcast() {
+    }
+
     private static StringBuilder raceProgress = new StringBuilder();
 
     public static String createRaceProgressString(RacingCars racingCars) {

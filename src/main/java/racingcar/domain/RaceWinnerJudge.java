@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RaceWinnerJudge {
+
+    private RaceWinnerJudge() {
+    }
+
     private static List<String> winner = new ArrayList<>();
 
     public static List<String> getRaceWinner(RacingCars racingCars) {

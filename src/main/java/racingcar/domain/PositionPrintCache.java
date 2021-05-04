@@ -6,6 +6,10 @@ import java.util.Map;
 import java.util.TreeMap;
 
 public class PositionPrintCache {
+
+    private PositionPrintCache() {
+    }
+
     private static Map<Integer, String> cache = new TreeMap<>();
 
     public static int getSize() {
@@ -16,9 +20,9 @@ public class PositionPrintCache {
         boolean isContained = cache.containsKey(key);
         String positionPrint = null;
 
-        if (isContained == true) {
+        if (isContained) {
             positionPrint = cache.get(key);
-        } else if (isContained == false) {
+        } else if (!isContained) {
             cache.put(key, createNewCache(key));
             positionPrint = cache.get(key);
         }

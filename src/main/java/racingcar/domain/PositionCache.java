@@ -14,9 +14,9 @@ public class PositionCache {
         boolean isContained = cache.containsKey(key);
         Position position = null;
 
-        if (isContained == true) {
+        if (isContained) {
             position = cache.get(key);
-        } else if (isContained == false) {
+        } else if (!isContained) {
             position = new Position(key);
             cache.put(key, position);
         }

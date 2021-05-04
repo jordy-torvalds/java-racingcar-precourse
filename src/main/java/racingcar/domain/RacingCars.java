@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RacingCars {
+
     private List<RacingCar> racingCarList = new ArrayList<>();
 
     public RacingCars(String racingCarsName) {
@@ -56,7 +57,7 @@ public class RacingCars {
     private void validateRacingCarsNameEnd(String racingCarsName) {
         boolean isEndedComma = racingCarsName.endsWith(",");
 
-        if (isEndedComma == true) {
+        if (isEndedComma) {
             throw new RacingCarsException.IllegalRacingCarsNameEndException();
         }
     }

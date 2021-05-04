@@ -7,9 +7,12 @@ import static racingcar.util.enums.ForwardStopStatus.STOP;
 
 public class ForwardStopPullUtil {
 
+    private ForwardStopPullUtil() {
+    }
+
     public static final int FORWARD_STOP_STANDARD = 4;
 
-    public static RandomGenerator randomGenerator = new DefaultRandomGenerator();
+    private static RandomGenerator randomGenerator = new DefaultRandomGenerator();
 
     public static ForwardStopStatus pullForwardStop() {
         return judgeForwardStop(randomGenerator.getRandomIntegerUnderMax());
