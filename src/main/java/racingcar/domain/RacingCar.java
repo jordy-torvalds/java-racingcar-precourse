@@ -34,7 +34,7 @@ public class RacingCar {
     }
 
     private void validateRacingCarNameBoundary(String racingCarName) {
-        if(racingCarName.length() < MIN_NAME_LENGTH
+        if (racingCarName.length() < MIN_NAME_LENGTH
                 || MAX_NAME_LENGTH < racingCarName.length()) {
             throw new RacingCarException.IllegalRacingCarNameBoundaryException(racingCarName);
         }

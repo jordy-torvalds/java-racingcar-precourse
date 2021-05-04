@@ -2,11 +2,11 @@ package racingcar.util;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.RepeatedTest;
-import org.junit.jupiter.api.Test;
 import racingcar.util.enums.ForwardStopStatus;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static racingcar.util.ForwardStopPullUtil.*;
+import static racingcar.util.ForwardStopPullUtil.FORWARD_STOP_STANDARD;
+import static racingcar.util.ForwardStopPullUtil.judgeForwardStop;
 import static racingcar.util.RandomGenerator.MAX_PULL_NUMBER;
 import static racingcar.util.RandomGenerator.MIN_PULL_NUMBER;
 
@@ -37,7 +37,7 @@ class ForwardStopPullUtilTest {
         // When, Then
         if (randomNumber < FORWARD_STOP_STANDARD) {
             assertEquals(judgeForwardStop(randomNumber), ForwardStopStatus.STOP);
-        } else if  (randomNumber >= FORWARD_STOP_STANDARD) {
+        } else if (randomNumber >= FORWARD_STOP_STANDARD) {
             assertEquals(judgeForwardStop(randomNumber), ForwardStopStatus.FORWARD);
         }
     }

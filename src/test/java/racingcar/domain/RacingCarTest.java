@@ -21,7 +21,7 @@ class RacingCarTest {
         String racingCarName = "죠르디";
 
         // When, Then
-        assertDoesNotThrow(()->new RacingCar(racingCarName));
+        assertDoesNotThrow(() -> new RacingCar(racingCarName));
     }
 
     @Test
@@ -134,7 +134,8 @@ class RacingCarTest {
         racingCarOne.applyForwardStop(FORWARD);
         racingCarOne.applyForwardStop(FORWARD);
         racingCarTwo.applyForwardStop(FORWARD);
-        racingCarThree.applyForwardStop(FORWARD);;
+        racingCarThree.applyForwardStop(FORWARD);
+        ;
         racingCarThree.applyForwardStop(FORWARD);
 
         // Then
@@ -158,7 +159,7 @@ class RacingCarTest {
         racingCarOne.applyForwardStop(FORWARD);
         racingCarTwo.applyForwardStop(FORWARD);
         racingCarTwo.applyForwardStop(FORWARD);
-        racingCarThree.applyForwardStop(FORWARD);;
+        racingCarThree.applyForwardStop(FORWARD);
         racingCarThree.applyForwardStop(FORWARD);
 
         // Then

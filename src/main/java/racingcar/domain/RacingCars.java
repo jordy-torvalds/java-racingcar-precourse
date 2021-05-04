@@ -19,14 +19,14 @@ public class RacingCars {
     }
 
     public void applyForwardStop() {
-        for(RacingCar racingCar : racingCarList) {
+        for (RacingCar racingCar : racingCarList) {
             ForwardStopStatus forwardStopStatus = ForwardStopPullUtil.pullForwardStop();
             racingCar.applyForwardStop(forwardStopStatus);
         }
     }
 
     public void runRacingCarConsumer(RacingCarConsumer racingCarConsumer) {
-        for(RacingCar racingCar : racingCarList) {
+        for (RacingCar racingCar : racingCarList) {
             racingCarConsumer.consume(racingCar);
         }
     }

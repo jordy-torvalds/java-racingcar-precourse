@@ -15,7 +15,7 @@ class TryCountTest {
     @ValueSource(strings = {"1", "3", "5", "7"})
     @DisplayName("재시도_횟수_입력_정상")
     void 재시도_횟수_입력_정상(String args) {
-        assertDoesNotThrow(()->new TryCount(args));
+        assertDoesNotThrow(() -> new TryCount(args));
     }
 
     @ParameterizedTest
@@ -23,7 +23,7 @@ class TryCountTest {
     @DisplayName("재시도_횟수_예외/비숫자_문자열_입력")
     void 재시도_횟수_예외_비숫자_문자열(String args) {
         assertThrows(TryCountException.IllegalMismatchTypeException.class
-                , ()->new TryCount(args));
+                , () -> new TryCount(args));
     }
 
     @ParameterizedTest
@@ -31,7 +31,7 @@ class TryCountTest {
     @DisplayName("재시도_횟수_예외/0_미만_정수_입력")
     void 재시도_횟수_예외_0_미만_정수(String args) {
         assertThrows(TryCountException.IllegalMinCountException.class
-                , ()->new TryCount(args));
+                , () -> new TryCount(args));
     }
 
 }

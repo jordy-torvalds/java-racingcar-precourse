@@ -19,7 +19,7 @@ public class RacingCarsTest {
         String racingCarsName = "죠르디,스카피,앙몬드";
 
         // When, Then
-        assertDoesNotThrow(()->new RacingCars(racingCarsName));
+        assertDoesNotThrow(() -> new RacingCars(racingCarsName));
     }
 
     @Order(2)
@@ -31,7 +31,7 @@ public class RacingCarsTest {
 
         // When, Then
         assertThrows(RacingCarsException.IllegalRacingCarsNameLengthException.class
-                , ()->new RacingCars(racingCarsName));
+                , () -> new RacingCars(racingCarsName));
     }
 
     @Order(3)
@@ -43,7 +43,7 @@ public class RacingCarsTest {
 
         // When, Then
         assertThrows(RacingCarsException.IllegalRacingCarsSizeException.class
-                , ()->new RacingCars(racingCarsName));
+                , () -> new RacingCars(racingCarsName));
     }
 
     @Order(4)
@@ -55,7 +55,7 @@ public class RacingCarsTest {
 
         // When, Then
         assertThrows(RacingCarsException.IllegalRacingCarsNameEndException.class
-                , ()->new RacingCars(racingCarsName));
+                , () -> new RacingCars(racingCarsName));
     }
 
     @Order(5)
@@ -67,7 +67,7 @@ public class RacingCarsTest {
 
         // When, Then
         assertThrows(RacingCarException.IllegalRacingCarNameBoundaryException.class
-                , ()->new RacingCars(racingCarsName));
+                , () -> new RacingCars(racingCarsName));
     }
 
     @Order(6)
@@ -79,6 +79,6 @@ public class RacingCarsTest {
 
         // When, Then
         assertThrows(RacingCarException.IllegalRacingCarNameBoundaryException.class
-                , ()->new RacingCars(racingCarsName));
+                , () -> new RacingCars(racingCarsName));
     }
 }
