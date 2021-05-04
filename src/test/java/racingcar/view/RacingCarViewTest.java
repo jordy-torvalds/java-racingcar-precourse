@@ -18,7 +18,7 @@ class RacingCarViewTest {
     private final ByteArrayOutputStream OUT_CONTENT = new ByteArrayOutputStream();
     private final ByteArrayOutputStream ERR_CONTENT = new ByteArrayOutputStream();
     private final StringBuilder RESULT_BUILDER = new StringBuilder();
-    private final String RESULT_TEMPLATE = "%s:%s\r\n";
+    private final String RESULT_TEMPLATE = "%s:%s\n";
 
     private RacingCarView racingCarView = new RacingCarView();
     private RacingCars racingCars = new RacingCars("죠르디,스카피,앙몬드");
@@ -40,6 +40,7 @@ class RacingCarViewTest {
         RESULT_BUILDER.append(format(RESULT_TEMPLATE, "죠르디", "-"));
         RESULT_BUILDER.append(format(RESULT_TEMPLATE, "스카피", ""));
         RESULT_BUILDER.append(format(RESULT_TEMPLATE, "앙몬드", "-"));
+        RESULT_BUILDER.append("\n");
 
         // When
         racingCarView.runTry(racingCars);
@@ -57,6 +58,7 @@ class RacingCarViewTest {
         RESULT_BUILDER.append(format(RESULT_TEMPLATE, "죠르디", "-"));
         RESULT_BUILDER.append(format(RESULT_TEMPLATE, "스카피", ""));
         RESULT_BUILDER.append(format(RESULT_TEMPLATE, "앙몬드", ""));
+        RESULT_BUILDER.append("\n");
 
         // When
         racingCarView.runTry(racingCars);
@@ -74,9 +76,11 @@ class RacingCarViewTest {
         RESULT_BUILDER.append(format(RESULT_TEMPLATE, "죠르디", "-"));
         RESULT_BUILDER.append(format(RESULT_TEMPLATE, "스카피", ""));
         RESULT_BUILDER.append(format(RESULT_TEMPLATE, "앙몬드", ""));
+        RESULT_BUILDER.append("\n");
         RESULT_BUILDER.append(format(RESULT_TEMPLATE, "죠르디", "--"));
         RESULT_BUILDER.append(format(RESULT_TEMPLATE, "스카피", ""));
         RESULT_BUILDER.append(format(RESULT_TEMPLATE, "앙몬드", "-"));
+        RESULT_BUILDER.append("\n");
 
         // When
         racingCarView.runTry(racingCars);
@@ -95,9 +99,11 @@ class RacingCarViewTest {
         RESULT_BUILDER.append(format(RESULT_TEMPLATE, "죠르디", "-"));
         RESULT_BUILDER.append(format(RESULT_TEMPLATE, "스카피", "-"));
         RESULT_BUILDER.append(format(RESULT_TEMPLATE, "앙몬드", "-"));
+        RESULT_BUILDER.append("\n");
         RESULT_BUILDER.append(format(RESULT_TEMPLATE, "죠르디", "-"));
         RESULT_BUILDER.append(format(RESULT_TEMPLATE, "스카피", "-"));
         RESULT_BUILDER.append(format(RESULT_TEMPLATE, "앙몬드", "--"));
+        RESULT_BUILDER.append("\n");
 
         // When
         racingCarView.runTry(racingCars);
