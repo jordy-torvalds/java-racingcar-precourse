@@ -8,23 +8,27 @@ public class RaceWinnerJudge {
     private RaceWinnerJudge() {
     }
 
-    private static List<String> winner = new ArrayList<>();
+    private static List<String> winners = new ArrayList<>();
 
-    public static List<String> getRaceWinner(RacingCars racingCars) {
-        winner.clear();
-        int highestKey = PositionCache.getHighestKey();
+    public static String getRaceWinner(RacingCars racingCars) {
+       int highestKey = PositionCache.getHighestKey();
+
         for (int i = 0; i < racingCars.getSize(); i++) {
             addWinningCarNameOnly(racingCars.getRacingCarBySpecificIndex(i), highestKey);
         }
 
-        return winner;
+        return String.join(",",winners);
+    }
+
+    public static void clearWinners() {
+        winners.clear();
     }
 
     private static void addWinningCarNameOnly(RacingCar racingCar, int highestPosition) {
         Position racingCarPosition = racingCar.getPosition();
 
         if (racingCarPosition.getValue() == highestPosition) {
-            winner.add(racingCar.getName());
+            winners.add(racingCar.getName());
         }
     }
 }
