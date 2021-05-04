@@ -28,6 +28,10 @@ public class PositionCache {
         cache.remove(value);
     }
 
+    public static void resetCache() {
+        cache = new HashMap<>();
+    }
+
     public static int getSize() {
         return cache.size();
     }

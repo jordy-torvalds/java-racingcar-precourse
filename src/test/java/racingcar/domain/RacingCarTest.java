@@ -1,9 +1,6 @@
 package racingcar.domain;
 
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.MethodOrderer;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.*;
 import racingcar.util.RacingCarException;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -13,6 +10,11 @@ import static racingcar.util.enums.ForwardStopStatus.STOP;
 @DisplayName("경주_자동차")
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class RacingCarTest {
+
+    @AfterEach
+    void resetCache() {
+        PositionCache.resetCache();
+    }
 
     @Test
     @DisplayName("자동차_생성_정상")
@@ -135,7 +137,6 @@ class RacingCarTest {
         racingCarOne.applyForwardStop(FORWARD);
         racingCarTwo.applyForwardStop(FORWARD);
         racingCarThree.applyForwardStop(FORWARD);
-        ;
         racingCarThree.applyForwardStop(FORWARD);
 
         // Then

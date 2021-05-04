@@ -1,5 +1,7 @@
 package racingcar.domain;
 
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -11,11 +13,16 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @DisplayName("위치_출력_캐시")
 class PositionPrintCacheTest {
 
+    @AfterEach
+    void 위치_출력_캐시_초기화() {
+        PositionPrintCache.resetCache();
+    }
+
     @Test
     void 위치_출력_정상_0부터_5까지() {
         // Given
         List<Integer> ints = Arrays.asList(0, 1, 2, 3, 4, 5);
-        List<String> expectedResults = Arrays.asList("", "=", "==", "===", "====", "=====");
+        List<String> expectedResults = Arrays.asList("", "-", "--", "---", "----", "-----");
 
 
         for (int i = 0; i < ints.size(); i++) {

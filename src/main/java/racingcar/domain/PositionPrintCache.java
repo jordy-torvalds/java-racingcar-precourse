@@ -1,6 +1,7 @@
 package racingcar.domain;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -33,6 +34,10 @@ public class PositionPrintCache {
         for (Integer cacheKey : cacheKeyList) {
             removeMinValue(cacheKey, removingTargetIndex);
         }
+    }
+
+    public static void resetCache() {
+        cache = new HashMap<>();
     }
 
     private static void removeMinValue(int key, int minValue) {
