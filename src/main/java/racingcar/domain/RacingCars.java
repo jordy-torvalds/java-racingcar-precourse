@@ -12,8 +12,10 @@ public class RacingCars {
 
     public RacingCars(String racingCarsName) {
         validateRacingCarsConstructor(racingCarsName);
-        createRacingCar(racingCarsName);
-        GameMetaData.Position.setDefaultUsableCount(this.getRacingCarListSize());
+
+        String[] racingCarNameArray = racingCarsName.split(",");
+        GameMetaData.Position.setDefaultUsableCount(racingCarNameArray.length);
+        createRacingCar(racingCarNameArray);
     }
 
     public void applyForwardStop() {
@@ -61,8 +63,7 @@ public class RacingCars {
         }
     }
 
-    private void createRacingCar(String racingCarsName) {
-        String[] racingCarNameArray = racingCarsName.split(",");
+    private void createRacingCar(String[] racingCarNameArray) {
 
         for (String racingCarName : racingCarNameArray) {
             RacingCar racingCar = new RacingCar(racingCarName);

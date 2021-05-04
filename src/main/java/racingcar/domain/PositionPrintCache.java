@@ -25,8 +25,10 @@ public class PositionPrintCache {
     }
 
     public static void clearUnusedCache(int lowestValue) {
+
         ArrayList<Integer> cacheKeyList = new ArrayList<>(cache.keySet());
-        int removingTargetIndex = lowestValue - GameMetaData.Position.DEFAULT_INCREASE_VALUE;
+        int removingTargetIndex = Math.max(GameMetaData.Position.DEFAULT_INCREASE_VALUE,
+                lowestValue - GameMetaData.Position.DEFAULT_INCREASE_VALUE);
 
         for (Integer cacheKey : cacheKeyList) {
             removeMinValue(cacheKey, removingTargetIndex);

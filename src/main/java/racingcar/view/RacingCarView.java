@@ -1,9 +1,6 @@
 package racingcar.view;
 
-import racingcar.domain.Position;
-import racingcar.domain.PositionPrintCache;
-import racingcar.domain.RacingCars;
-import racingcar.domain.TryCount;
+import racingcar.domain.*;
 import racingcar.util.RacingCarException;
 import racingcar.util.RacingCarsException;
 import racingcar.util.TryCountException;
@@ -17,20 +14,40 @@ public class RacingCarView {
 
     private final String MESSAGE_ANSWER_CAR_NAME = "경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)";
     private final String MESSAGE_ANSWER_TRY_COUNT = "시도할 회수는 몇회인가요?";
+    private final String MESSAGE_RUN_RESULT = "실행결과";
     private final Scanner sc = new Scanner(System.in);
 
     public void run() {
         RacingCars racingCars = initializeRacingCars();
         TryCount tryCount = initializeTryCount();
+        gameStart(racingCars, tryCount);
     }
 
-    public void runTry(RacingCars racingCars) {
+    private void gameStart(RacingCars racingCars, TryCount tryCount) {
+        System.out.println(MESSAGE_RUN_RESULT);
+        while (tryCount.isRemainingTryCount()) {
+            runTry(racingCars);
+            clearPositionPrintCache();
+            tryCount.minusTryCount();
+        }
+        printWinner(racingCars);
+    }
+
+    void runTry(RacingCars racingCars) {
         racingCars.applyForwardStop();
+
         racingCars.runRacingCarConsumer((racingCar) -> {
             Position position = racingCar.getPosition();
             String positionPrint = PositionPrintCache.getPositionPrint(position.getValue());
             System.out.println(format("%s:%s", racingCar.getName(), positionPrint));
         });
+
+        System.out.println();
+    }
+
+    void clearPositionPrintCache() {
+        int minimumPosition = PositionCache.getLowestKey();
+        PositionPrintCache.clearUnusedCache(minimumPosition);
     }
 
     private RacingCars initializeRacingCars() {
@@ -79,5 +96,8 @@ public class RacingCarView {
             optionalTryCount = Optional.ofNullable(null);
         }
         return optionalTryCount;
+    }
+
+    private void printWinner(RacingCars racingCars) {
     }
 }

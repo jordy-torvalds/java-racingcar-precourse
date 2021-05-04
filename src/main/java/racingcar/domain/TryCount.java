@@ -16,6 +16,10 @@ public class TryCount {
         this.count -= 1;
     }
 
+    public boolean isRemainingTryCount() {
+        return count > 0;
+    }
+
     private void validateTryCount(String countString) {
         validateMismatchType(countString);
         validateMinCount(countString);
