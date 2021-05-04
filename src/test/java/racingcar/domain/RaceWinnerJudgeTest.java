@@ -32,7 +32,7 @@ class RaceWinnerJudgeTest {
 
 
         // When
-        for(String randomNumbers : randomNumbersArray) {
+        for (String randomNumbers : randomNumbersArray) {
             int[] randomNumberIntArray = parseIntArray(randomNumbers);
             ForwardStopPullUtil.changeRandomGenerator(new MockRandomGenerator(randomNumberIntArray));
             racingCars.applyForwardStop();

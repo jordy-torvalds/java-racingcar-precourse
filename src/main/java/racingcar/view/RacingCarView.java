@@ -5,7 +5,6 @@ import racingcar.util.RacingCarException;
 import racingcar.util.RacingCarsException;
 import racingcar.util.TryCountException;
 
-import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
 

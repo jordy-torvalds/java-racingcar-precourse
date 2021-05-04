@@ -11,13 +11,13 @@ public class RaceWinnerJudge {
     private static List<String> winners = new ArrayList<>();
 
     public static String getRaceWinner(RacingCars racingCars) {
-       int highestKey = PositionCache.getHighestKey();
+        int highestKey = PositionCache.getHighestKey();
 
         for (int i = 0; i < racingCars.getSize(); i++) {
             addWinningCarNameOnly(racingCars.getRacingCarBySpecificIndex(i), highestKey);
         }
 
-        return String.join(",",winners);
+        return String.join(",", winners);
     }
 
     public static void clearWinners() {
