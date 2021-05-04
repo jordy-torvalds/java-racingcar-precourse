@@ -2,7 +2,6 @@ package racingcar.util;
 
 import racingcar.util.enums.ForwardStopStatus;
 
-
 import static racingcar.util.enums.ForwardStopStatus.FORWARD;
 import static racingcar.util.enums.ForwardStopStatus.STOP;
 
