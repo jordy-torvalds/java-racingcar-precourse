@@ -11,7 +11,6 @@ public class GameMetaData {
         }
 
         public static final int MIN_PLAYING_RACING_CARS_SIZE = 2;
-        public static final int MAX_PLAYING_RACING_CARS_SIZE = Integer.MAX_VALUE;
     }
 
     public static class RacingCar {
