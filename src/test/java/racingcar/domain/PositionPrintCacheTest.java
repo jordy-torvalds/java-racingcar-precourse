@@ -18,6 +18,7 @@ class PositionPrintCacheTest {
     }
 
     @Test
+    @DisplayName("위치_출력_정상_0부터_5까지")
     void 위치_출력_정상_0부터_5까지() {
         // Given
         List<Integer> ints = Arrays.asList(0, 1, 2, 3, 4, 5);
@@ -34,6 +35,7 @@ class PositionPrintCacheTest {
     }
 
     @Test
+    @DisplayName("위치_출력_정상_동일한_위치_비중복_저장_확인")
     void 위치_출력_정상_동일한_위치_비중복_저장_확인() {
         // Given
         List<Integer> ints = Arrays.asList(0, 1, 1, 1, 1, 1);
@@ -49,6 +51,7 @@ class PositionPrintCacheTest {
     }
 
     @Test
+    @DisplayName("위치_출력_정상_미사용_캐시_정리_확인")
     void 위치_출력_정상_미사용_캐시_정리_확인() {
         // Given
         List<Integer> ints = Arrays.asList(0, 1, 2, 3, 4, 5);
