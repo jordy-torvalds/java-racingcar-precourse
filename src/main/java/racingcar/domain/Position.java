@@ -29,10 +29,6 @@ public class Position {
         return PositionCache.getPosition(value);
     }
 
-    private int getUsableCount() {
-        return usableCount;
-    }
-
     private void minusUsableCount() {
         this.usableCount -= 1;
 
