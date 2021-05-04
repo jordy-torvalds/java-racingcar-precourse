@@ -31,7 +31,11 @@ public class RacingCars {
         }
     }
 
-    private int getRacingCarListSize() {
+    public RacingCar getRacingCarBySpecificIndex(int index) {
+        return racingCarList.get(index);
+    }
+
+    public int getSize() {
         return racingCarList.size();
     }
 

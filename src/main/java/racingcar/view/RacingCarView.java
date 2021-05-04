@@ -5,6 +5,7 @@ import racingcar.util.RacingCarException;
 import racingcar.util.RacingCarsException;
 import racingcar.util.TryCountException;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
 
@@ -15,6 +16,7 @@ public class RacingCarView {
     private final String MESSAGE_ANSWER_CAR_NAME = "경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)";
     private final String MESSAGE_ANSWER_TRY_COUNT = "시도할 회수는 몇회인가요?";
     private final String MESSAGE_RUN_RESULT = "실행결과";
+    private final String MESSAGE_WINNER_RESULT = "가 최종 우승했습니다.";
     private final Scanner sc = new Scanner(System.in);
 
     public void run() {
@@ -99,5 +101,12 @@ public class RacingCarView {
     }
 
     private void printWinner(RacingCars racingCars) {
+        List<String> winners = RaceWinnerJudge.getRaceWinner(racingCars);
+
+        for (int i = 0; i < winners.size(); i++) {
+            String winnerPrint = (i == winners.size() - 1 ? winners.get(i) : winners.get(i) + ",");
+            System.out.print(winnerPrint);
+        }
+        System.out.println(MESSAGE_WINNER_RESULT);
     }
 }
